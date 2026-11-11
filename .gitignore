@@ -1,0 +1,21 @@
+*.iml
+.gradle/
+.kotlin/
+.idea/
+.DS_Store
+**/build/
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Signing material — never commit
+/keystore.properties
+/keystore/
+*.jks
+*.keystore
+
+# Build outputs
+*.apk
+*.aab
+*.ap_

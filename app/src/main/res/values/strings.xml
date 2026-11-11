@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ATV Remote</string>
+
+    <string name="discovery_title">Choose your TV</string>
+    <string name="discovery_subtitle">Android TV Remote v2 · same Wi-Fi network</string>
+    <string name="refresh">Refresh</string>
+    <string name="scanning">Scanning your network…</string>
+    <string name="scan_hint">This can take a few seconds</string>
+    <string name="protocol_label">Android TV Remote Protocol v2 · TLS</string>
+    <string name="devices_found">%1$d found</string>
+    <string name="last_used">LAST USED</string>
+    <string name="empty_title">No TVs found yet</string>
+    <string name="empty_body">Check that the TV is on, connected to this Wi-Fi network, and that Android TV Remote Service is enabled in the TV settings.</string>
+    <string name="empty_hint">Tip: wake the TV with its physical remote and try again.</string>
+
+    <string name="pair_title">Pair with TV</string>
+    <string name="pin_instruction">Enter the 6-character code displayed on</string>
+    <string name="pin_hint">Hex code, e.g. A1B2C3</string>
+    <string name="pin_invalid">Enter all 6 hexadecimal characters.</string>
+    <string name="pin_mismatch">That code does not match this TV. Check the code and try again.</string>
+    <string name="pair">Pair</string>
+    <string name="cancel">Cancel</string>
+    <string name="pairing_cancelled">Pairing cancelled.</string>
+
+    <string name="status_disconnected">Disconnected</string>
+    <string name="status_connecting">Connecting…</string>
+    <string name="status_pairing">Pairing</string>
+    <string name="status_connected">Connected</string>
+    <string name="status_failed">Connection error</string>
+
+    <string name="key_up">Up</string>
+    <string name="key_down">Down</string>
+    <string name="key_left">Left</string>
+    <string name="key_right">Right</string>
+    <string name="key_ok">OK</string>
+    <string name="key_back">Back</string>
+    <string name="key_home">Home</string>
+    <string name="key_volume_up">Volume up</string>
+    <string name="key_volume_down">Volume down</string>
+    <string name="key_mute">Mute</string>
+    <string name="key_power">Power</string>
+    <string name="keyboard">Keyboard</string>
+    <string name="keyboard_subtitle">Type on the TV as you type here</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="reconnect">Reconnect</string>
+
+    <string name="text_title">Type on TV</string>
+    <string name="text_hint">Text is sent as you type…</string>
+    <string name="text_help">Open a search or text field on the TV, then type here. Input streams live to the TV.</string>
+    <string name="done">Done</string>
+    <string name="clear">Clear</string>
+
+    <string name="volume_level">Vol %1$d</string>
+    <string name="volume">Volume</string>
+    <string name="muted">Muted</string>
+    <string name="current_app">Now playing in %1$s</string>
+    <string name="unknown_device">Android TV</string>
+    <string name="back_to_devices">Back to devices</string>
+    <string name="retry">Retry</string>
+
+    <string name="error_unreachable">Could not reach the TV. Check that it is powered on and on the same Wi-Fi network.</string>
+    <string name="error_timeout">The TV did not respond in time.</string>
+    <string name="error_tls">The secure connection failed. The TV may need to be paired again.</string>
+    <string name="error_pairing_rejected">The TV rejected the pairing request.</string>
+    <string name="error_pairing_timeout">The TV did not confirm the pairing code. Check the code and try again.</string>
+    <string name="error_protocol">The TV sent an unexpected response.</string>
+    <string name="error_generic">Something went wrong while talking to the TV.</string>
+    <string name="error_send_failed">Could not send the command.</string>
+    <string name="error_from_tv">The TV reported an error handling the last command.</string>
+    <string name="error_discovery">Network discovery failed. Check the Wi-Fi connection and try again.</string>
+    <string name="error_invalid_pin">Enter the full 6-character hex code.</string>
+    <string name="connection_lost">Connection to the TV was lost.</string>
+    <string name="paired_success">Paired. Remote ready.</string>
+    <string name="pairing_failed">Pairing could not be completed.</string>
+    <string name="demo_mode_banner">Demo mode — no TV connected</string>
+</resources>
