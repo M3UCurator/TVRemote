@@ -96,7 +96,7 @@ jobs:
       - name: Build signed release APK
         if: steps.signing.outputs.ready == 'true'
         run: |
-          ./gradlew :app:assembleRelease --no-daemon \
+          bash ./gradlew :app:assembleRelease --no-daemon \
             -PversionName="${{ steps.version.outputs.name }}" \
             -PversionCode="${{ steps.version.outputs.code }}"
 
