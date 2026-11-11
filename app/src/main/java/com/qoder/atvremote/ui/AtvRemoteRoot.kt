@@ -22,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.qoder.atvremote.model.RemoteKey
 import com.qoder.atvremote.ui.components.PairingPinDialog
@@ -32,12 +33,20 @@ import com.qoder.atvremote.ui.theme.InkRaised
 @Composable
 fun AtvRemoteRoot(viewModel: RemoteViewModel) {
     val state by viewModel.uiState.collectAsStateWithLifecycle()
+    val updateViewModel: UpdateViewModel = hiltViewModel()
+    val updateState by updateViewModel.uiState.collectAsStateWithLifecycle()
     val snackbarHostState = remember { SnackbarHostState() }
 
     LaunchedEffect(state.message) {
         val message = state.message ?: return@LaunchedEffect
         snackbarHostState.showSnackbar(message)
         viewModel.consumeMessage()
+    }
+
+    LaunchedEffect(updateState.message) {
+        val message = updateState.message ?: return@LaunchedEffect
+        snackbarHostState.showSnackbar(message)
+        updateViewModel.consumeMessage()
     }
 
     BackHandler(enabled = state.activeDevice != null) {
@@ -71,6 +80,7 @@ fun AtvRemoteRoot(viewModel: RemoteViewModel) {
             } else {
                 DiscoveryScreen(
                     state = state,
+                    update = updateState,
                     onRefresh = viewModel::refreshDevices,
                     onSelect = viewModel::selectDevice,
                     onReconnect = {
@@ -78,6 +88,8 @@ fun AtvRemoteRoot(viewModel: RemoteViewModel) {
                             viewModel.selectDevice(device)
                         }
                     },
+                    onUpdate = updateViewModel::startUpdate,
+                    onDismissUpdate = updateViewModel::dismiss,
                 )
             }
         }

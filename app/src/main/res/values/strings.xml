@@ -74,4 +74,14 @@
     <string name="paired_success">Paired. Remote ready.</string>
     <string name="pairing_failed">Pairing could not be completed.</string>
     <string name="demo_mode_banner">Demo mode — no TV connected</string>
+
+    <string name="update_available">Update available</string>
+    <string name="update_version">Version %1$s · %2$s</string>
+    <string name="update_version_only">Version %1$s</string>
+    <string name="update_downloading">Downloading %1$d%%</string>
+    <string name="update_starting">Starting download…</string>
+    <string name="update_action">Update</string>
+    <string name="update_dismiss">Dismiss update</string>
+    <string name="update_failed">The update could not be downloaded. Check your connection and try again.</string>
+    <string name="update_allow_installs">Allow ATV Remote to install unknown apps, then tap Update again.</string>
 </resources>

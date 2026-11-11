@@ -38,11 +38,20 @@ class SettingsStore @Inject constructor(
             }.apply()
         }
 
+    var dismissedUpdateVersion: String?
+        get() = preferences.getString(KEY_DISMISSED_UPDATE, null)
+        set(value) {
+            preferences.edit().apply {
+                if (value == null) remove(KEY_DISMISSED_UPDATE) else putString(KEY_DISMISSED_UPDATE, value)
+            }.apply()
+        }
+
     private companion object {
         const val PREFS_NAME = "atv_remote_settings"
         const val KEY_NAME = "device_name"
         const val KEY_HOST = "device_host"
         const val KEY_PAIR_PORT = "pair_port"
         const val KEY_COMMAND_PORT = "command_port"
+        const val KEY_DISMISSED_UPDATE = "dismissed_update_version"
     }
 }

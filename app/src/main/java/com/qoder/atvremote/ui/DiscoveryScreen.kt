@@ -51,15 +51,19 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.qoder.atvremote.R
 import com.qoder.atvremote.model.TvDevice
+import com.qoder.atvremote.ui.components.UpdateBanner
 import com.qoder.atvremote.ui.theme.SuccessGreen
 import com.qoder.atvremote.ui.theme.WarningAmber
 
 @Composable
 fun DiscoveryScreen(
     state: RemoteUiState,
+    update: UpdateUiState,
     onRefresh: () -> Unit,
     onSelect: (TvDevice) -> Unit,
     onReconnect: () -> Unit,
+    onUpdate: () -> Unit,
+    onDismissUpdate: () -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -88,6 +92,14 @@ fun DiscoveryScreen(
         }
 
         Spacer(Modifier.height(20.dp))
+        if (update.release != null) {
+            UpdateBanner(
+                state = update,
+                onUpdate = onUpdate,
+                onDismiss = onDismissUpdate,
+            )
+            Spacer(Modifier.height(14.dp))
+        }
         ScanSummary(scanning = state.isScanning, count = state.devices.size)
         Spacer(Modifier.height(14.dp))
 

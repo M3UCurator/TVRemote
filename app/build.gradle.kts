@@ -10,8 +10,8 @@ plugins {
     id("com.google.protobuf")
 }
 
-val appVersionName = providers.gradleProperty("versionName").orNull ?: "1.0.0"
-val appVersionCode = providers.gradleProperty("versionCode").orNull?.toIntOrNull() ?: 1
+val appVersionName = providers.gradleProperty("versionName").orNull ?: "1.1.0"
+val appVersionCode = providers.gradleProperty("versionCode").orNull?.toIntOrNull() ?: 10100
 
 val keystorePropertiesFile = rootProject.file("keystore.properties")
 val keystoreProperties = Properties().apply {
@@ -145,6 +145,7 @@ dependencies {
 
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
+    testImplementation("org.json:json:20240303")
 
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
